@@ -30,7 +30,7 @@ const BlogCard = ({ blog: { title, desc, imageUrl,  authorId, _id ,createdAt} })
           </Link>
           <div className="ml-[0.75 rem] flex justify-between align-middle">
             <div>
-              <h3 className=" text-[15px] sm:text-[28px] font-bold mt-[1.5rem] mb-[1.25rem]">
+              <h3 className=" text-[15px] md:text-[25px] font-bold mt-[1.5rem] mb-[1.25rem]">
                 {title}
               </h3>
               <p className="text-[20px]">{desc.slice(0,100)}</p>

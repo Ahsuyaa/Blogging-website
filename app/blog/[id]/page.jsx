@@ -95,6 +95,13 @@ const BlogDetail = (ctx) => {
         console.log(error)
     }
 }
+const dateString = blogDetail?.createdAt;
+const dateObj = new Date(dateString);
+const formattedDate = dateObj.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric"
+});
 
   return (
     <div className="flex justify-center items-center">
@@ -130,7 +137,8 @@ const BlogDetail = (ctx) => {
                 </span>
               </button>
             </div>
-          ) : (
+          ) : 
+          (
             <div>
               Author :<span> {blogDetail?.authorId?.username}</span>
             </div>
@@ -145,7 +153,7 @@ const BlogDetail = (ctx) => {
         <div className="flex justify-between m-2">
           <p>{blogDetail?.desc}</p>
           <span>
-            Posted:<span>{format(blogDetail?.createAt)}</span>
+            Posted:<span>{formattedDate }</span>
           </span>
         </div>
         <div className="m-0 mt-10 w-[100%] flex flex-col justify-center  text-center rounded-[10px] ">
